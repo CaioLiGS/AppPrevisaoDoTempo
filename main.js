@@ -1,6 +1,15 @@
 // criar constante com a chave da API
 const key = 'e0283766cee7e7e70be7e75409ae8042'
 
+const inputCidade = document.querySelector(".input-cidade");
+const botaoPesquisa = document.querySelector(".btn-pesquisa");
+
+inputCidade.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    botaoPesquisa.click();
+  }
+});
+
 // Função para capturar o valor do input
 function Coletar(){
     let cidade = document.querySelector('.input-cidade').value
@@ -19,12 +28,15 @@ async function Dados(cidade){
 
 function ExibirDados(dados){
     document.querySelector('.cidade').textContent = dados.name
-    document.querySelector('.graus').textContent = parseInt(dados.main.temp) + ' °C'
+    document.querySelector('.graus').textContent = parseInt(dados.main.temp) + '°C'
 
     // Exibindo o clima
-    let weather = dados.weather['0']
-    document.querySelector('.previsao').textContent = weather.description
-    document.querySelector('.img-previsao').src = `https://openweathermap.org/img/wn/${weather.icon}.png`;
+    let weather = dados.weather[0]
+    document.querySelector('.img-previsao').src = `Icons/Icon${weather.icon}.svg`;
+
+    // Exibindo temperatura min e max
+    document.querySelector('.grausMin').textContent = parseInt(dados.main.temp_min) + '°C'
+    document.querySelector('.grausMax').textContent = parseInt(dados.main.temp_max) + '°C'
 
     // Exibindo a umidade
     let umidade = document.querySelector('.umidade')
