@@ -2,70 +2,199 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Arial", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 150%;
+    font-family: 'New Amsterdam', sans-serif;
 }
 
-/*Fundo*/
-body{
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(#1de4ee, #06afdb);
+body {
+    background-color: #f4f7f6;
+    color: #333;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.caixa-maior {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ebeaea;
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
 }
 
-.box-titulo{
-    border: 0;
-    border-bottom: 2px;
-    border-style: inset;
-    border-color: black;
-    margin-bottom: 10px;
+.box-titulo {
+    margin-bottom: 25px;
 }
 
-.titulo{
-    font-weight: bolder;
-    text-align: center; 
-    font-size: 30px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #1471e6;
+.titulo {
+    font-size: 2.2em;
+    color: #2c3e50;
+    font-weight: normal;
 }
 
-.caixa-maior{
-    background-color: antiquewhite;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+.input-cidade {
+    padding: 12px 15px;
+    border: 1px solid #dce1e4;
+    border-radius: 8px;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: auto;
+    min-width: 180px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 25px;
 }
 
-.caixa-media{
-    
+.input-cidade::placeholder {
+    color: #95a5a6;
 }
 
-.caixa-pequena{
+.input-cidade:focus {
+    border-color: #007bff;
+}
+
+.btn-pesquisa {
+    padding: 12px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 25px;
+    transition: all 0.25s ease-in-out;
+}
+
+.btn-pesquisa:hover {
+    background-color: #0056b3;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.233);
+}
+
+.caixa-media {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.cidade {
+    font-size: 1.8em;
+    color: #34495e;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.graus {
+    font-size: 2em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.caixa-pequena {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    background-color: #b6d3ff;
+    width: 50%;
+    border-radius: 15px;
+    padding-right: 20px;
 }
 
-.btn-pesquisa{
-    background-color: rgba(0, 225, 255, 0.445);
-    border-radius: 10px;
-    border-color: rgb(0, 0, 0);
-    padding: 5px;
+.previsao {
+    font-size: 1.2em;
+    color: #7f8c8d;
 }
 
-input{
-    outline: none;
+.img-previsao {
+    width: 100px;
+    height: 100px;
 }
 
-.previsao{
-    text-transform: capitalize;
+.Temperaturas{
+    width: 60px;
 }
 
-.button{
-    cursor: pointer;
+.TemperaturasMinEMax{
+    display: flex;
+    justify-content: space-between;
+    color: #00000048;
+}
+
+.umidade, .vento {
+    font-size: 0.9em;
+    color: #555e61;
+    display: inline-block;
+    margin: 0 8px 10px 8px;
+    padding: 5px 0;
+}
+
+.caixa-maior > p:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+    .caixa-maior {
+        padding: 25px 20px;
+        max-width: 90%;
+    }
+
+    .input-cidade,
+    .btn-pesquisa {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .input-cidade {
+        margin-bottom: 10px;
+    }
+    .btn-pesquisa {
+        margin-bottom: 20px;
+    }
+
+    .caixa-media {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .cidade {
+        font-size: 1.7em;
+    }
+    .graus {
+        font-size: 3em;
+    }
+
+    .previsao {
+        font-size: 1.1em;
+    }
+    .img-previsao {
+        width: 45px;
+        height: 45px;
+    }
+
+    .umidade,
+    .vento {
+        display: block;
+        margin: 5px auto 10px auto;
+        text-align: center;
+    }
+    .caixa-maior > p:last-of-type {
+         margin-bottom: 0;
+    }
 }
