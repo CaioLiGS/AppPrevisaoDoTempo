@@ -4,39 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    
     <title>AppPrevisao</title>
-    
 </head>
+
 <body>
     <div class="caixa-maior">
-
         <div class="box-titulo">
             <h2 class="titulo">Previsão do Tempo</h2>
         </div>
-        
-        
-        <input type="text" placeholder="Cidade" class="input-cidade">
-        <button class="btn-pesquisa" onclick="Coletar() ">Pesquisar</button>
-        
+        <div class="CaixaPesquisa">
+            <input type="text" placeholder="Cidade" class="input-cidade">
+            <button class="btn-pesquisa" onclick="Coletar()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
         <div class="caixa-media">
             <p class="cidade">Aracaju</p>
-            <p class="graus">27°C</p>
+        </div>
+        <div class="caixa-pequena">
+            <img src="Icons/Icon00d.svg" alt="" class="img-previsao">
+            <div class="Temperaturas">
+                <p class="graus">27°C</p>
+                <div class="TemperaturasMinEMax">
+                    <p class="grausMin">27°C</p>
+                    <p class="grausMax">28°C</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="InformacoesAdicionais">
+            <p class="umidade">Umidade Relativa do Ar: 72%</p>
+            <p class="vento">Velocidade do vento: 5.66m/s</p>
         </div>
         
-        <div class="caixa-pequena">
-            <p class="previsao">Ensolarado</p>
-            <img src="https://openweathermap.org/img/wn/01d.png" alt="" class="img-previsao">
-        </div>
-
-        <p class="umidade">Umidade Relativa do Ar: 72%</p>
-        <p class="vento">Velocidade do vento: 5.66m/s</p>
     </div>
-
     <script src="main.js"></script>
 </body>
+
+</html>
